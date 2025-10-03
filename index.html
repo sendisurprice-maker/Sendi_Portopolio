@@ -1,543 +1,313 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Sendi Muchdianto</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
-            color: #333;
-        }
-        
-        .download-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            z-index: 1000;
-            transition: all 0.3s;
-        }
-        
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 50px 60px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 400px;
-            height: 400px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-        }
-        
-        .header h1 {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .header .subtitle {
-            font-size: 18px;
-            font-weight: 300;
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .profile-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px 60px;
-        }
-        
-        .profile-section p {
-            line-height: 1.8;
-            font-size: 15px;
-        }
-        
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            padding: 30px 60px;
-            background: #f8f9fa;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-        }
-        
-        .contact-icon {
-            width: 35px;
-            height: 35px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            flex-shrink: 0;
-        }
-        
-        .content {
-            padding: 40px 60px;
-        }
-        
-        .section {
-            margin-bottom: 40px;
-        }
-        
-        .section-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #1e3c72;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
-            display: inline-block;
-        }
-        
-        .experience-item {
-            margin-bottom: 35px;
-            position: relative;
-            padding-left: 30px;
-        }
-        
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 8px;
-            width: 12px;
-            height: 12px;
-            background: #667eea;
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 2px #667eea;
-        }
-        
-        .company-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 10px;
-        }
-        
-        .company-name {
-            font-size: 18px;
-            font-weight: 700;
-            color: #1e3c72;
-        }
-        
-        .period {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-        }
-        
-        .position {
-            font-size: 15px;
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .description {
-            font-size: 14px;
-            line-height: 1.7;
-            color: #555;
-            margin-bottom: 15px;
-        }
-        
-        .achievements {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .achievement-title {
-            font-weight: 600;
-            color: #1e3c72;
-            margin-bottom: 12px;
-            font-size: 15px;
-        }
-        
-        .achievement-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .achievement-list li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-            font-size: 14px;
-            line-height: 1.6;
-            color: #555;
-        }
-        
-        .achievement-list li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: 700;
-            font-size: 16px;
-        }
-        
-        .metrics-box {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .metric {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            border: 2px solid #e0e0e0;
-        }
-        
-        .metric-value {
-            font-size: 20px;
-            font-weight: 700;
-            color: #667eea;
-            margin-bottom: 5px;
-        }
-        
-        .metric-label {
-            font-size: 12px;
-            color: #666;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-        
-        .skill-category {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border-top: 3px solid #667eea;
-        }
-        
-        .skill-category h3 {
-            font-size: 16px;
-            color: #1e3c72;
-            margin-bottom: 12px;
-        }
-        
-        .skill-category ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .skill-category li {
-            padding: 5px 0;
-            font-size: 14px;
-            color: #555;
-            padding-left: 20px;
-            position: relative;
-        }
-        
-        .skill-category li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: 700;
-        }
-        
-        .education-item {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .education-degree {
-            font-weight: 600;
-            color: #1e3c72;
-            font-size: 16px;
-        }
-        
-        .education-school {
-            color: #667eea;
-            font-size: 14px;
-            margin-top: 5px;
-        }
-        
-        .education-year {
-            color: #999;
-            font-size: 13px;
-            margin-top: 5px;
-        }
-        
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-            .container {
-                box-shadow: none;
-                max-width: 100%;
-            }
-            .download-btn {
-                display: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Task Management Tracker Surprice</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f9; }
+    header { background: #2c3e50; color: white; padding: 15px; text-align: center; font-size: 22px; }
+    .login-box, .register-box, .content { max-width: 500px; margin: 80px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+    .hidden { display: none; }
+    input[type=text], input[type=password], input[type=email], input[type=file] {
+      width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px;
+    }
+    button {
+      padding: 10px 20px; background: #1abc9c; color: white; border: none; border-radius: 6px; cursor: pointer;
+    }
+    button:hover { background: #16a085; }
+    .sidebar {
+      width: 220px; background: #34495e; position: fixed; top: 0; bottom: 0; left: 0; padding-top: 60px;
+    }
+    .sidebar a { display: block; color: white; padding: 12px; text-decoration: none; }
+    .sidebar a:hover { background: #1abc9c; }
+    .main { margin-left: 240px; padding: 20px; }
+    .report-link { background: #ecf0f1; margin: 8px 0; padding: 10px; border-radius: 6px; }
+    footer { margin-top: 30px; text-align: center; font-size: 12px; color: gray; }
+    .topbar { display: flex; justify-content: space-between; align-items: center; }
+    img { max-width: 100%; margin: 10px 0; border-radius: 8px; }
+    .instructions { background: #fff3cd; padding: 15px; margin: 15px 0; border-radius: 8px; border: 1px solid #ffeeba; }
+    #motivasi { background:#1abc9c;color:white;padding:8px;text-align:center; }
+    .chat-box { border:1px solid #ccc; border-radius:8px; padding:10px; height:300px; overflow-y:auto; background:white; margin-bottom:10px; }
+    .chat-message { margin:5px 0; padding:8px; border-radius:6px; max-width:70%; }
+    .chat-user { background:#d1f7c4; align-self:flex-start; }
+    .chat-other { background:#cce5ff; align-self:flex-end; margin-left:auto; }
+    .chat-input { display:flex; gap:5px; }
+    .chat-input input { flex:1; }
+  </style>
 </head>
 <body>
-    <button class="download-btn" onclick="window.print()">📥 Download PDF</button>
-    
-    <div class="container">
-        <div class="header">
-            <h1>SENDI MUCHDIANTO</h1>
-            <div class="subtitle">Operations Manager | E-Commerce & Logistics Expert</div>
-        </div>
-        
-        <div class="profile-section">
-            <p>Profesional berpengalaman 15+ tahun dalam operasional, logistik, warehouse management, dan e-commerce marketplace. Terbukti berhasil memimpin tim lintas fungsi, mengoptimalkan efisiensi operasional hingga 40%, dan meningkatkan revenue melalui strategic planning. Expertise dalam multi-channel marketplace (Lazada, Shopee, TikTok), inventory control 80.000+ SKU, dan digital transformation.</p>
-        </div>
-        
-        <div class="contact-info">
-            <div class="contact-item">
-                <div class="contact-icon">📱</div>
-                <div>+0881-0110-99718</div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon">📧</div>
-                <div>hafidz30012012@gmail.com</div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon">📍</div>
-                <div>Citayam, Depok, Jawa Barat</div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon">🎂</div>
-                <div>Bandung, 22 Januari 1985</div>
-            </div>
-        </div>
-        
-        <div class="content">
-            <div class="section">
-                <h2 class="section-title">Pengalaman Profesional</h2>
-                
-                <div class="experience-item">
-                    <div class="company-header">
-                        <div class="company-name">PT CHANDRA ANUGRAH GEMILANG</div>
-                        <div class="period">2024 - Sekarang</div>
-                    </div>
-                    <div class="position">Kepala Operasional | E-Commerce Home Living</div>
-                    <div class="description">
-                        Memimpin full operations perusahaan e-commerce dengan 3 marketplace channels (Lazada, Shopee, TikTok), membawahi 6 divisi: Warehouse, Admin, Finance, Customer Service, KOL TikTok, dan Driver Operations dengan team 20+ personel.
-                    </div>
-                    
-                    <div class="achievements">
-                        <div class="achievement-title">🎯 STRATEGIC INITIATIVES & ACHIEVEMENTS</div>
-                        
-                        <div class="achievement-list">
-                            <li><strong>Omnichannel Integration & Automation:</strong> Integrasi 3 marketplace ke single dashboard, reduksi error 35% dan lead time 20%, real-time inventory sync dengan akurasi 99.2%</li>
-                            
-                            <li><strong>Warehouse Excellence:</strong> Redesign layout untuk 5.000+ SKU, implementasi zone picking meningkatkan productivity 40%, reduksi dead stock 30%, stock accuracy 99.2%</li>
-                            
-                            <li><strong>Customer Experience:</strong> Meningkatkan store rating dari 4.2 → 4.8 dalam 6 bulan, cancellation rate turun dari 8% → 2.5%, response time <4 jam, repeat customer +35%</li>
-                            
-                            <li><strong>TikTok Live Commerce:</strong> Revenue growth 250% dalam 8 bulan, average 2.000+ viewers per session, conversion rate 18% untuk flash sale campaigns</li>
-                            
-                            <li><strong>Last Mile Delivery:</strong> Route optimization hemat cost 25%, on-time delivery 96%, same-day delivery untuk area Jabodetabek</li>
-                            
-                            <li><strong>Financial Digitalization:</strong> Otomasi invoicing, percepat settlement 7 hari → 3 hari, reduksi accounting error 45%, dashboard profitability per-SKU</li>
-                            
-                            <li><strong>Campaign Management:</strong> Process 500+ orders/day saat peak season (11.11, 12.12, Harbolnas) tanpa delay, maintain quality standard</li>
-                        </div>
-                        
-                        <div class="metrics-box">
-                            <div class="metric">
-                                <div class="metric-value">250%</div>
-                                <div class="metric-label">TikTok Revenue Growth</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">4.8/5.0</div>
-                                <div class="metric-label">Store Rating</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">40%</div>
-                                <div class="metric-label">Productivity Increase</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">20+</div>
-                                <div class="metric-label">Team Members</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="company-header">
-                        <div class="company-name">PT OTOBOT INDONESIA</div>
-                        <div class="period">2022 - 2024</div>
-                    </div>
-                    <div class="position">Operations Manager | Distribution & Aftersales</div>
-                    <div class="achievement-list">
-                        <li>Managed 80.000 SKU distribution, warehouse, service center operations</li>
-                        <li>Meningkatkan inbound-outbound efficiency 25%</li>
-                        <li>Inventory turnover optimization 15% lebih efisien</li>
-                        <li>WMS implementation untuk real-time tracking</li>
-                        <li>Operational cost reduction 18% melalui process improvement</li>
-                    </div>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="company-header">
-                        <div class="company-name">PT SATRIA ANTARAN PRIMA, TBK</div>
-                        <div class="period">2015 - 2021</div>
-                    </div>
-                    <div class="position">Operations Supervisor | Courier & Logistics</div>
-                    <div class="achievement-list">
-                        <li>Optimalisasi rute dan scheduling, efisiensi delivery meningkat 30%</li>
-                        <li>Maintain SLA >95% secara konsisten year-over-year</li>
-                        <li>Reduksi misroute 40%, damage rate <0.1%</li>
-                        <li>Team training program meningkatkan produktivitas kurir</li>
-                        <li>Complaint resolution <24 jam melalui IT & CS coordination</li>
-                    </div>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="company-header">
-                        <div class="company-name">PT POS INDONESIA, TBK</div>
-                        <div class="period">2010 - 2015</div>
-                    </div>
-                    <div class="position">Data & Operations Support</div>
-                    <div class="achievement-list">
-                        <li>Data accuracy improvement hingga 98% via validasi dan automation</li>
-                        <li>Dashboard development (Excel & Access) untuk operations monitoring</li>
-                        <li>System error resolution <1 jam response time</li>
-                        <li>Staff training program untuk sistem dan aplikasi internal</li>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h2 class="section-title">Pendidikan</h2>
-                
-                <div class="education-item">
-                    <div class="education-degree">S1 Ekonomi Syariah</div>
-                    <div class="education-school">STAIN Pekalongan</div>
-                    <div class="education-year">2006 - 2010</div>
-                </div>
-                
-                <div class="education-item">
-                    <div class="education-degree">SMK Teknik Elektro</div>
-                    <div class="education-school">SMK 1 Angkasa</div>
-                    <div class="education-year">2000 - 2003</div>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h2 class="section-title">Keahlian & Kompetensi</h2>
-                
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Operations & Logistics</h3>
-                        <ul>
-                            <li>Warehouse Management</li>
-                            <li>Inventory Control & Optimization</li>
-                            <li>Distribution & Last Mile Delivery</li>
-                            <li>Supply Chain Coordination</li>
-                            <li>SOP Development</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3>E-Commerce & Digital</h3>
-                        <ul>
-                            <li>Marketplace Operations (Lazada, Shopee, TikTok)</li>
-                            <li>Live Commerce & KOL Management</li>
-                            <li>Omnichannel Integration</li>
-                            <li>Campaign & Flash Sale Management</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3>Leadership & Strategy</h3>
-                        <ul>
-                            <li>Cross-Functional Team Leadership</li>
-                            <li>KPI & Performance Management</li>
-                            <li>Process Improvement</li>
-                            <li>Budget & P&L Management</li>
-                            <li>Training & Development</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3>Technical Skills</h3>
-                        <ul>
-                            <li>ERP, WMS, Appsheet</li>
-                            <li>Excel Advanced, Google Sheets</li>
-                            <li>Data Analysis & Dashboard</li>
-                            <li>Accurate v.2.0, VB 6.0</li>
-                            <li>IT Hardware, Basic Programming</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <header>📊 Task Management Tracker Operasional Surprice</header>  <!-- REGISTER -->  <div id="register" class="register-box">
+    <h2>Register</h2>
+    <p>Buat akun baru</p>
+    <input type="text" id="regName" placeholder="Nama Lengkap">
+    <input type="email" id="regEmail" placeholder="Email">
+    <input type="password" id="regPassword" placeholder="Password (min 8 huruf & angka)">
+    <button onclick="register()">Daftar</button>
+    <p id="regError" style="color:red;"></p>
+    <p>Sudah punya akun? <a href="#" onclick="showLogin()">Login disini</a></p>
+  </div>  <!-- LOGIN -->  <div id="login" class="login-box hidden">
+    <h2>Welcome</h2>
+    <p>Silakan login</p>
+    <input type="text" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPassword" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="loginError" style="color:red;"></p>
+    <p>Belum punya akun? <a href="#" onclick="showRegister()">Daftar disini</a></p>
+  </div>  <!-- DASHBOARD -->  <div id="dashboard" class="hidden">
+    <div class="sidebar">
+      <a href="#" onclick="showReports('Gudang')">Gudang</a>
+      <a href="#" onclick="showReports('cs')">Customer Service</a>
+      <a href="#" onclick="showReports('marketing')">Marketing</a>
+      <a href="#" onclick="showReports('driver')">Driver</a>
+      <a href="#" onclick="showReports('finance')">Finance</a>
+      <a href="#" onclick="secureOperasional()">Kepala Operasional</a>
+      <a href="#" onclick="showReports('admin')">Admin</a>
+      <a href="#" onclick="openChat()">💬 Chat</a>
+      <a href="#" onclick="logout()">🚪 Logout</a>
+    </div><div class="main">
+  <div id="motivasi"></div>
+  <div class="topbar">
+    <h2 id="welcome"></h2>
+  </div>
+  <h3 id="menu-title">Pilih Menu</h3>
+  <div id="report-list"></div>
+
+  <!-- Instruksi penggunaan -->
+  <div id="instructions" class="instructions hidden"></div>
+
+  <!-- Upload Gambar Gudang -->
+  <div id="upload-gudang" class="hidden">
+    <h3>Upload Peta/Gambar Gudang</h3>
+    <input type="file" id="gudangImageInput" accept="image/*">
+    <button onclick="uploadGudangImage()">Upload</button>
+    <div id="gudangImageContainer"></div>
+  </div>
+
+  <!-- Form tambah laporan -->
+  <div id="add-report" class="hidden">
+    <h3>Tambah Link Laporan</h3>
+    <input type="text" id="report-name" placeholder="Nama Laporan (misal: Lap Operasional Oktober 2025)">
+    <input type="text" id="report-url" placeholder="Paste Link Google Spreadsheet">
+    <button onclick="saveReport()">Simpan</button>
+  </div>
+
+  <!-- Ganti Password Kepala Operasional -->
+  <div id="change-pass" class="hidden">
+    <h3>Ganti Password Kepala Operasional</h3>
+    <input type="password" id="newOperasionalPass" placeholder="Password Baru">
+    <button onclick="changeOperasionalPass()">Ganti Password</button>
+  </div>
+
+  <!-- Chat Section -->
+  <div id="chat-section" class="hidden">
+    <h3>💬 Chat Internal</h3>
+    <div id="chatBox" class="chat-box"></div>
+    <div class="chat-input">
+      <input type="text" id="chatMessage" placeholder="Tulis pesan...">
+      <button onclick="sendMessage()">Kirim</button>
     </div>
-</body>
-</html>
+  </div>
+
+  <footer>© Sendi_Muchdianto</footer>
+</div>
+
+  </div>  <script>
+    // Data users dan reports
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let reports = JSON.parse(localStorage.getItem("reports")) || { cs: [], marketing: [], driver: [], finance: [], operasional: [], admin: [], Gudang: [] };
+    let chatMessages = JSON.parse(localStorage.getItem("chatMessages")) || [];
+
+    // Variabel global
+    let gudangImage = localStorage.getItem("gudangImage") || null;
+    let operasionalPass = localStorage.getItem("operasionalPass") || "admin123";
+    let currentUser = null;
+    let currentMenu = "";
+
+    const instructionsMap = {
+      "Gudang": "📦 Menu Gudang → Upload peta gudang A–J, tambah laporan stok, lokasi barang.",
+      "cs": "📞 Customer Service → Tambah link laporan interaksi customer, komplain, follow-up.",
+      "marketing": "📢 Marketing → Simpan laporan campaign, performa iklan, strategi penjualan.",
+      "driver": "🚚 Driver → Upload laporan perjalanan, penggunaan BBM, rute pengiriman.",
+      "finance": "💰 Finance → Simpan laporan keuangan, arus kas, biaya operasional.",
+      "operasional": "⚙️ Kepala Operasional → Akses semua laporan divisi, bisa ganti password khusus.",
+      "admin": "🛠️ Admin → Kontrol data sistem, maintenance, serta backup laporan."
+    };
+
+    const motivasiList = [
+      "💡 Tetap semangat tim! Fokus hari ini = hasil besar esok 🌟",
+      "🚀 Kerja keras mengalahkan bakat ketika bakat tidak bekerja keras!",
+      "🔥 Jangan menunda pekerjaan, sukses diraih bersama!",
+      "🌱 Konsistensi kecil setiap hari membuahkan hasil besar!"
+    ];
+
+    function tampilkanMotivasi(){
+      const rand = motivasiList[Math.floor(Math.random() * motivasiList.length)];
+      document.getElementById("motivasi").innerHTML = `<marquee>${rand}</marquee>`;
+    }
+
+    // Auth Functions
+    function showRegister(){
+      document.getElementById("register").classList.remove("hidden");
+      document.getElementById("login").classList.add("hidden");
+    }
+
+    function showLogin(){
+      document.getElementById("login").classList.remove("hidden");
+      document.getElementById("register").classList.add("hidden");
+    }
+
+    function register(){
+      const name = document.getElementById("regName").value;
+      const email = document.getElementById("regEmail").value;
+      const password = document.getElementById("regPassword").value;
+
+      if(!name || !email || !password){
+        document.getElementById("regError").innerText = "Semua field wajib diisi";
+        return;
+      }
+
+      const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+      if(!regex.test(password)){
+        document.getElementById("regError").innerText = "Password harus min 8 karakter kombinasi huruf & angka";
+        return;
+      }
+
+      if(users.find(u => u.email === email)){
+        document.getElementById("regError").innerText = "Email sudah terdaftar";
+        return;
+      }
+
+      users.push({name, email, password});
+      localStorage.setItem("users", JSON.stringify(users));
+      alert("Registrasi berhasil! Silakan login.");
+      showLogin();
+    }
+
+    function login(){
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+      const user = users.find(u => u.email === email && u.password === password);
+
+      if(user){
+        currentUser = user;
+        document.getElementById("login").classList.add("hidden");
+        document.getElementById("dashboard").classList.remove("hidden");
+        document.getElementById("welcome").innerText = "Selamat datang, " + user.name;
+        tampilkanMotivasi();
+      } else {
+        document.getElementById("loginError").innerText = "Email atau password salah!";
+      }
+    }
+
+    function logout(){
+      currentUser = null;
+      document.getElementById("dashboard").classList.add("hidden");
+      document.getElementById("login").classList.remove("hidden");
+      document.getElementById("loginEmail").value = "";
+      document.getElementById("loginPassword").value = "";
+      document.getElementById("loginError").innerText = "";
+    }
+
+    // Operasional Functions
+    function secureOperasional(){
+      const pass = prompt("Masukkan password khusus Kepala Operasional:");
+      if(pass === operasionalPass){
+        showReports("operasional");
+        document.getElementById("change-pass").classList.remove("hidden");
+      } else {
+        alert("Password salah!");
+      }
+    }
+
+    function changeOperasionalPass(){
+      const newPass = document.getElementById("newOperasionalPass").value;
+      if(newPass.length >= 6){
+        operasionalPass = newPass;
+        localStorage.setItem("operasionalPass", newPass);
+        alert("Password Kepala Operasional berhasil diganti!");
+        document.getElementById("newOperasionalPass").value = "";
+      } else {
+        alert("Password minimal 6 karakter!");
+      }
+    }
+
+    // Report Functions
+    function showReports(menu){
+      currentMenu = menu;
+      const list = document.getElementById("report-list");
+      const title = document.getElementById("menu-title");
+      const addForm = document.getElementById("add-report");
+      const uploadGudang = document.getElementById("upload-gudang");
+      const instruksi = document.getElementById("instructions");
+      const chat = document.getElementById("chat-section");
+
+      title.innerText = "Daftar Laporan " + menu.toUpperCase();
+      list.innerHTML = "";
+      reports[menu].forEach((r) => {
+        const div = document.createElement("div");
+        div.className = "report-link";
+        div.innerHTML = `<a href="${r.url}" target="_blank">${r.name}</a>`;
+        list.appendChild(div);
+      });
+
+      instruksi.innerText = instructionsMap[menu] || "";
+      instruksi.classList.remove("hidden");
+
+      addForm.classList.remove("hidden");
+      chat.classList.add("hidden");
+
+      if(menu === "Gudang"){
+        uploadGudang.classList.remove("hidden");
+        if(gudangImage){
+          document.getElementById("gudangImageContainer").innerHTML = `<img src="${gudangImage}" alt="Peta Gudang">`;
+        }
+      } else {
+        uploadGudang.classList.add("hidden");
+      }
+    }
+
+    function saveReport(){
+      const name = document.getElementById("report-name").value;
+      const url = document.getElementById("report-url").value;
+
+      if (name && url) {
+        reports[currentMenu].push({ name, url });
+        localStorage.setItem("reports", JSON.stringify(reports));
+        showReports(currentMenu);
+        document.getElementById("report-name").value = "";
+        document.getElementById("report-url").value = "";
+      }
+    }
+
+    // Gudang Functions
+    function uploadGudangImage(){
+      const input = document.getElementById("gudangImageInput");
+      const file = input.files[0];
+      if(file){
+        const reader = new FileReader();
+        reader.onload = function(e){
+          gudangImage = e.target.result;
+          localStorage.setItem("gudangImage", gudangImage);
+          document.getElementById("gudangImageContainer").innerHTML = `<img src="${gudangImage}" alt="Peta Gudang">`;
+        }
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // Chat Functions
+    function openChat(){
+      document.getElementById("menu-title").innerText = "💬 Chat Internal";
+      document.getElementById("report-list").innerHTML = "";
+      document.getElementById("instructions").classList.add("hidden");
+      document.getElementById("add-report").classList.add("hidden");
+      document.getElementById("upload-gudang").classList.add("hidden");
+      document.getElementById("change-pass").classList.add("hidden");
+      document.getElementById("chat-section").classList.remove("hidden");
+      renderChat();
+    }
+
+    function sendMessage(){
+      const msg = document.getElementById("chatMessage").value;
+      if(msg && currentUser){
+        chatMessages.push({user: currentUser.name, text: msg});
+        localStorage.setItem("chatMessages", JSON.stringify(chatMessages));
+        document
